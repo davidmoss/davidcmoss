@@ -1,27 +1,27 @@
-html {
+html, body {
 	color: #dee2e9;
+	height: 100%;
 }
 
 body {
     background-color: #2e3034;
-    display: block;
     font-size: 62.5%;
-    margin: 100px 0;
+    margin: 0;
+		padding: 0;
 }
 
 header, footer {
 	background-color: #1b1c1f;
-	height: 50px;
 	width: 100%;
-	display: block;
-	position: absolute;
 }
 
 header {
 	top: 0;
+	height: 50px;
 }
 
 footer {
+	position: absolute;
 	bottom: 0;
 	font: 300 1.5em/1.5em 'Open Sans', sans-serif;
 	color: #7c7f85;
@@ -33,7 +33,7 @@ footer section {
 	width: 100%;
 }
 footer section p {
-	margin: 12px 0 0;
+	margin: 12px;
 }
 
 p, h1, h3{
@@ -56,9 +56,15 @@ h1 span.sub {
 	font-size: 0.5em;
 }
 
+#content {
+  min-height:100%;
+  position:relative;
+}
+
 #content #about {
 	max-width: 960px;
 	margin: 0 auto;
+	padding: 50px 0 100px;
 	width: 100%;
 	position: relative;
 }
@@ -75,6 +81,10 @@ h1 span.sub {
 
 #content .profile p {
 	font: 300 1.5em/1.4em 'Open Sans', sans-serif;
+}
+
+#content .whoami {
+  padding: 0 12px;	
 }
 
 #content .whoami p {
