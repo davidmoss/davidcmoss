@@ -1,0 +1,47 @@
+[user]
+	email = david.moss@hogarthww.com
+	name = David Moss
+[core]
+	pager = less
+	logAllRefUpdates = on
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	co = checkout
+	fa = fetch --all
+	fe = fetch
+	rc = rebase --continue
+	rs = rebase --skip
+	ri = rebase --interactive
+	ra = rebase --abort
+	sl = stash list
+	st = status
+	d = diff
+	di = diff
+	aa = add -A
+	a = add
+	ci = commit
+	caa = commit --all --amend
+	cia = commit --amend
+	rh = reset --hard
+	rp = repack -adf
+	pur = pull --rebase
+	cam = commit -am
+	fixup = commit --amend -CHEAD
+	mergeback = "!f() { git update-ref refs/heads/master -m \"Force-merging master with current branch $(git symbolic-ref HEAD)\" $(echo \"$1\" | git commit-tree \"HEAD^{tree}\" -p refs/heads/master -p HEAD); git lg master HEAD -4 | cat; }; f"
+	resetother = "!f(){ git update-ref refs/heads/$1 $2; git lg -4 $1 | cat; }; f"
+	po = push origin
+	cm = commit -m
+	mm = merge --no-ff -m
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[rebase]
+	autosquash = true
+[push]
+	default = simple
+[tig "bind"]
+	generic = P !git push
+[rerere]
+	enabled = true
