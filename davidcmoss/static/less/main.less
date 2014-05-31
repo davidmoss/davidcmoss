@@ -1,0 +1,106 @@
+@font: 'Open Sans', sans-serif;
+
+html, body {
+	color: #dee2e9;
+	height: 100%;
+}
+
+body {
+    background-color: #2e3034;
+    font-size: 62.5%;
+    margin: 0;
+		padding: 0;
+}
+
+header, footer {
+	background-color: #1b1c1f;
+	width: 100%;
+}
+
+header {
+	top: 0;
+	height: 50px;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	font: 300 1.5em/1.5em @font;
+	color: #7c7f85;
+
+	section {
+		max-width: 960px;
+		margin: 0 auto;
+		width: 100%;
+
+		p {
+			margin: 12px;
+		}
+	}
+}
+
+p, h1, h3{
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	font: inherit;
+	color: #07CDFE;
+	text-decoration: none;
+}
+
+h1 {
+	font: 300 4em/1em @font;
+	
+	.span.sub {
+		display: inline-block;
+		font-size: 0.5em;
+	}
+}
+
+img {
+	height: 200px;
+	padding: 0 0 30px;
+}
+
+.slash {
+	color: #07CDFE;
+}
+
+#content {
+  min-height:100%;
+  position:relative;
+	
+	#about {
+		max-width: 960px;
+		margin: 0 auto;
+		padding: 50px 0 100px;
+		width: 100%;
+		position: relative;
+	}
+
+ .profile {
+		text-align: center;
+		padding-bottom: 40px;
+
+		h3 {
+			font: 600 2em/1.2em @font;
+			padding: 0 0 5px;
+		}
+
+		p {
+			font: 300 1.5em/1.4em @font;
+		}
+	}
+
+	.whoami {
+	  padding: 0 12px;	
+
+		p {
+			font: 300 1.5em/1.5em @font;
+			color: #7c7f85;
+			margin: 15px 0 0;
+		}
+	}
+}
