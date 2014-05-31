@@ -47,6 +47,43 @@ Now install the requirements for the application.
 (davidcmoss)$ pip install -r requirements.txt
 ```
 
+###Grunt
+
+Locally to compile and generate the CSS files you need to install and setup [Grunt](http://gruntjs.com)
+
+You will need to install `node` for this - please follow the instructions here [http://nodejs.org/download/](http://nodejs.org/download/)
+
+From inside the code repo then install all the dependencies with the node package manager `npm`
+
+```
+(davidcmoss)$ npm install --save-dev
+npm WARN package.json DavidCMoss@0.1.0 No repository field.
+ 
+> DavidCMoss@0.1.0 postinstall /Users/davidmoss/Code/davidcmoss
+> ./node_modules/grunt-cli/bin/grunt
+
+Running "less:production" (less) task
+File ./davidcmoss/static/css/main.css created: 1.31 kB → 1.04 kB
+
+Done, without errors.
+```
+
+This will also run the less compilation in the postinstall step to get you up and running.
+
+To run the css build manually you can do
+
+```
+(davidcmoss)$ npm run postinstall
+ 
+> DavidCMoss@0.1.0 postinstall /Users/davidmoss/Code/davidcmoss
+> ./node_modules/grunt-cli/bin/grunt
+
+Running "less:production" (less) task
+File ./davidcmoss/static/css/main.css created: 1.31 kB → 1.04 kB
+
+Done, without errors.
+```
+
 ###Run the application
 
 You can now start the processes in your Procfile locally using [Foreman](http://blog.daviddollar.org/2011/05/06/introducing-foreman.html) (installed as part of the Toolbelt):
@@ -109,7 +146,7 @@ This automatically added the Heroku remote for our app (`git@heroku.com:stark-wi
 
 ###Configuration
 
-As the application uses [Grunt](gruntjs.com) to build and compress the CSS files on deployment we need to define the buildpackage that heroku should use to build and deploy the application. We have to override the automatic detection Heroku uses to define what application you are deploying so we run the node build and python deployment.
+As the application uses [Grunt](http://gruntjs.com) to build and compress the CSS files on deployment we need to define the buildpackage that heroku should use to build and deploy the application. We have to override the automatic detection Heroku uses to define what application you are deploying so we run the node build and python deployment.
 
 ```
 $ heroku config:add BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi.git
