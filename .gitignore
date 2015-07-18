@@ -53,3 +53,5 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+davidcmoss/static/css/
+node_modules
