@@ -56,16 +56,10 @@ You will need to install `node` for this - please follow the instructions here [
 From inside the code repo then install all the dependencies with the node package manager `npm`
 
 ```
-(davidcmoss)$ npm install --save-dev
-npm WARN package.json DavidCMoss@0.1.0 No repository field.
- 
-> DavidCMoss@0.1.0 postinstall /Users/davidmoss/Code/davidcmoss
-> ./node_modules/grunt-cli/bin/grunt
-
-Running "less:production" (less) task
-File ./davidcmoss/static/css/main.css created: 1.31 kB → 1.04 kB
-
-Done, without errors.
+(davidcmoss)$ npm install
++ grunt-cli@1.2.0
++ grunt-contrib-less@2.0.0
++ grunt@1.0.3
 ```
 
 This will also run the less compilation in the postinstall step to get you up and running.
@@ -74,30 +68,23 @@ To run the css build manually you can do
 
 ```
 (davidcmoss)$ npm run postinstall
- 
+
 > DavidCMoss@0.1.0 postinstall /Users/davidmoss/Code/davidcmoss
 > ./node_modules/grunt-cli/bin/grunt
 
 Running "less:production" (less) task
-File ./davidcmoss/static/css/main.css created: 1.31 kB → 1.04 kB
+>> 1 stylesheet created.
 
-Done, without errors.
+Done.
+audited 280 packages in 2.033s
+found 0 vulnerabilities
 ```
 
 ### Run the application
 
-You can now start the processes in your Procfile locally using [Foreman](http://blog.daviddollar.org/2011/05/06/introducing-foreman.html) (installed as part of the Toolbelt):
+You can now start the processes in your Procfile locally using
 
-```
-(davidcmoss)$ foreman start -p 8000
-10:12:53 web.1  | started with pid 63635
-10:12:56 web.1  | 2014-05-31 10:12:56 [63635] [INFO] Starting gunicorn 18.0
-10:12:56 web.1  | 2014-05-31 10:12:56 [63635] [INFO] Listening at: http://0.0.0.0:8000 (63635)
-10:12:56 web.1  | 2014-05-31 10:12:56 [63635] [INFO] Using worker: sync
-10:12:56 web.1  | 2014-05-31 10:12:56 [63638] [INFO] Booting worker with pid: 63638
-```
-
-Alternatively you can use the standard `django runserver` command
+Alternatively you can use the standard `django runserver` command:
 
 ```
 (davidcmoss)$ ./manage.py runserver
@@ -142,14 +129,15 @@ http://stark-window-524.herokuapp.com/ | git@heroku.com:stark-window-524.git
 Git remote heroku added
 ```
 
-This automatically added the Heroku remote for our app (`git@heroku.com:stark-window-524.git`) to our repository. 
+This automatically added the Heroku remote for our app (`git@heroku.com:stark-window-524.git`) to our repository.
 
 ### Configuration
 
-As the application uses [Grunt](http://gruntjs.com) to build and compress the CSS files on deployment we need to define the buildpackage that heroku should use to build and deploy the application. We have to override the automatic detection Heroku uses to define what application you are deploying so we run the node build and python deployment.
+As the application uses [Grunt](http://gruntjs.com) to build and compress the CSS files on deployment we need to define the buildpacks that heroku should use to build and deploy the application. We have to override the automatic detection Heroku uses to define what application you are deploying so we run the node build and python deployment.
 
 ```
-$ heroku config:add BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi.git
+$ heroku buildpacks:set heroku/python
+$ heroku buildpacks:add --index 1 heroku/nodejs
 $ heroku config:set NODE_ENV=production
 ```
 
@@ -183,13 +171,13 @@ Total 6 (delta 3), reused 0 (delta 0)
 -----> Exporting config vars to environment
 -----> Installing dependencies
        npm WARN package.json DavidCMoss@0.1.0 No repository field.
-       
+
        > DavidCMoss@0.1.0 postinstall /tmp/build_34a3e3a3-371b-4a4c-9428-8ed522122e96
        > ./node_modules/grunt-cli/bin/grunt
-       
+
        Running "less:production" (less) task
        File ./davidcmoss/static/css/main.css created: 1.31 kB → 1.04 kB
-       
+
        Done, without errors.
 -----> Caching node_modules directory for future builds
 -----> Cleaning up node-gyp and npm artifacts
@@ -251,12 +239,12 @@ Using release configuration from last framework (Python).
        http://quiet-falls-4610.herokuapp.com/ deployed to Heroku
 
 To git@heroku.com:quiet-falls-4610.git
- + [new branch] master -> master 
+ + [new branch] master -> master
 ```
 
 By default there are no web dynamos enabled, but you can easily scale this by executing:
 
-```$ heroku ps:scale web=1```
+`$ heroku ps:scale web=1`
 
 and to confirm or check:
 
@@ -264,7 +252,7 @@ and to confirm or check:
 $ heroku ps
 === web: `gunicorn hellodjango.wsgi`
 web.1: up for 10s
-````
+```
 
 Note: Increasing the number above 1 will encure a cost
 
@@ -294,11 +282,11 @@ $ heroku logs
 
 $ heroku run python manage.py shell
 Running python manage.py shell attached to terminal... up, run.1
-Python 2.7.6 (default, Jan 16 2014, 02:39:37)
+Python 3.6.6 (default, Jan 16 2018, 02:39:37)
 [GCC 4.4.3] on linux2
 Type "help", "copyright", "credits" or "license" for more information.
 (InteractiveConsole)
->>> 
+>>>
 ```
 
 ##### Reference

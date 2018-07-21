@@ -55,3 +55,4 @@ docs/_build/
 
 davidcmoss/static/css/
 node_modules
+db.sqlite3

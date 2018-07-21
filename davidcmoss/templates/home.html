@@ -12,7 +12,7 @@
         <!-- SEO RELEVANT TAGS -->
         <meta name="description" content="Hands on Agile Development Manager from London UK." />
         <meta name="author" content="David C Moss">
-        <meta name="keywords" content="david, moss, david moss, david c moss, python, agile, scrum, kanban, django, flask, architect, management, css3, web, internet, javascript, js, html5, release, devops, vagrant, salt, facebook, twitter, development, director, web application, dam, mam, vidispine, rest, api, professional, enterprise, scalable, freelance london, london, uk, united kingdom"/>
+        <meta name="keywords" content="david, moss, david moss, david c moss, python, agile, scrum, kanban, django, flask, docker, terraform, kubernetes, architect, management, css3, web, internet, javascript, js, html5, release, devops, vagrant, salt, facebook, twitter, development, director, web application, dam, mam, vidispine, rest, api, professional, enterprise, scalable, freelance london, london, uk, united kingdom"/>
         <!-- SEO RELEVANT TAGS -->
 
         <title>David C Moss</title>
@@ -32,50 +32,63 @@
         <link rel="stylesheet" href="{% static "css/main.css"%}">
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,latin-ext">
         <!-- STYLESHEETS -->
+        <link rel="icon" href="{% static "img/favicon.ico"%}">
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-		<section id="content">
+		    <section id="content">
 
-			<header></header>
+			      <header></header>
 
-			<section id="about">
-	            <article>
-	                <section class="profile">
-	                    <img src="{% static "img/profile.jpeg"%}" alt="Profile Image">
-	                    <h3>David Moss</h3>
-	                    <p>Application Development Director</p>
-	                </section>
-	            </article>
-	            <article>
-	                <section class="whoami">
-	                    <h1>About me <span class="slash">/</span> <span class="sub">Who I am and what I do.</span></h1>
-	                    <p>Hi, my name is David Moss. I'm a 32 year old Software Engineer with a difference. I am passionate about building products and can't bear to see it fail. I've worn many different hats during my time in this role which range from Scrum Master, Product Owner/Architect to Release Manager as well as the day job as Development Director.</p>
-	                    <p>If you want to know more please checkout my <a href="{% static "Curriculum Vitae.pdf"%}">Curriculum Vitae</a></p>
-	                </section>
-	            </article>
-	        </section>
+      			<section id="about">
+                <article>
+                    <section class="profile">
+                        <img src="{% static "img/profile.jpeg"%}" alt="Profile Image">
+                        <h3>David Moss</h3>
+                        <p>Head of Development</p>
+                    </section>
+                </article>
+                <article>
+                    <section class="whoami">
+                        <h1>About me <span class="slash">/</span> <span class="sub">Who I am and what I do.</span></h1>
+                        <p>
+                          Hi, my name is David Moss. I'm a 35 year old Software Engineer with a difference.
+                          I am passionate about building products and can't bear to see it fail. I've worn
+                          many different hats during my time in this role which range from Scrum Master,
+                          Product Owner/Architect to Release Manager as well as the day job as Development Director.
+                        </p>
+                        <p>
+                          If you want to know more please checkout my
+                          <a href="{% static "Curriculum Vitae.pdf"%}">Curriculum Vitae</a>
+                        </p>
+                    </section>
+                </article>
+            </section>
 
-	        <footer>
-	            <section>
-	                <p>Copyright © 2015 <span class="slash">/</span> All Rights Reserved by David Moss. Proudly hosted by <a href="https://www.heroku.com">Heroku</a>.</p>
-	            </section>
-	        </footer>
+    	      <footer>
+    	          <section>
+    	              <p>
+                        Copyright © {% now "Y" %} <span class="slash">/</span>
+                        All Rights Reserved by David Moss.
+                        Proudly hosted by <a href="https://www.heroku.com">Heroku</a>.
+    								</p>
+    						</section>
+    				</footer>
 
-		</section>
+    		</section>
 
         <script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-			ga('create', 'UA-50901144-1', 'davidcmoss.co.uk');
-			ga('send', 'pageview');
-		</script>
+    			ga('create', 'UA-50901144-1', 'davidcmoss.co.uk');
+    			ga('send', 'pageview');
+    		</script>
 
     </body>
 </html>
