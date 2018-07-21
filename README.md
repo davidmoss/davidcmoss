@@ -1,15 +1,15 @@
-#David C Moss
+# David C Moss
 
 My personal portfolio and experiment playground
 
-###Checkout
+### Checkout
 Checkout the code repo to your local development folder
 
 ```$ git clone git@github.com:davidmoss/davidcmoss.git```
 
-##Locally
+## Locally
 
-###Setup
+### Setup
 
 To work locally you will want to ensure we work in an isolated environment where we control the packages and versions installed. Using a virtual environment will ensure this, there's also a helpful set of shortcuts to manage them aswell. Lets install them:
 
@@ -34,7 +34,7 @@ There are also a set of useful Heroku tools to interact and deploy update. Insta
 
 ```$ wget -qO- https://toolbelt.heroku.com/install.sh | sh```
 
-###Installation
+### Installation
 
 First create everything to run our application. First lets create the virtualenv.
 
@@ -47,7 +47,7 @@ Now install the requirements for the application.
 (davidcmoss)$ pip install -r requirements.txt
 ```
 
-###Grunt
+### Grunt
 
 Locally to compile and generate the CSS files you need to install and setup [Grunt](http://gruntjs.com)
 
@@ -84,7 +84,7 @@ File ./davidcmoss/static/css/main.css created: 1.31 kB → 1.04 kB
 Done, without errors.
 ```
 
-###Run the application
+### Run the application
 
 You can now start the processes in your Procfile locally using [Foreman](http://blog.daviddollar.org/2011/05/06/introducing-foreman.html) (installed as part of the Toolbelt):
 
@@ -112,11 +112,11 @@ Quit the server with CONTROL-C.
 
 Now you can access the application at [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
-##Heroku
+## Heroku
 
 Heroku were the first major player in the PaaS world with quick and ease of deployment on the cloud. They are a perfect platform to use to run small, light apps.
 
-###Create Instance
+### Create Instance
 
 Ensure you have a Heroku user account. [Signup is free and instant](https://signup.heroku.com/signup/dc).
 
@@ -144,7 +144,7 @@ Git remote heroku added
 
 This automatically added the Heroku remote for our app (`git@heroku.com:stark-window-524.git`) to our repository. 
 
-###Configuration
+### Configuration
 
 As the application uses [Grunt](http://gruntjs.com) to build and compress the CSS files on deployment we need to define the buildpackage that heroku should use to build and deploy the application. We have to override the automatic detection Heroku uses to define what application you are deploying so we run the node build and python deployment.
 
@@ -153,7 +153,7 @@ $ heroku config:add BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-mu
 $ heroku config:set NODE_ENV=production
 ```
 
-###Deployment
+### Deployment
 
 Now do a simple `git push` to deploy the application
 
@@ -275,7 +275,7 @@ $ heroku open
 Opening simple-spring-9999.herokuapp.com... done
 ```
 
-###Commands
+### Commands
 
 You can use the heroku command line tools to access and alter your deployment but a couple of useful and familiar comands are:
 
@@ -301,7 +301,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> 
 ```
 
-#####Reference
+##### Reference
 
 * Virtualenvwrapper - [http://virtualenvwrapper.readthedocs.org/en/latest/](http://virtualenvwrapper.readthedocs.org/en/latest/)
 * Grunt runner - [https://github.com/mbuchetics/heroku-buildpack-nodejs-grunt](https://github.com/mbuchetics/heroku-buildpack-nodejs-grunt)
